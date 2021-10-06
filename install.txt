@@ -1,0 +1,40 @@
+npm config set strict-ssl false
+set PUPPETEER_SKIP_DOWNLOAD='true'
+npm install whatsapp-web.js
+npm config set python c:\Users\u54979\Anaconda3\python.exe
+npm install node-gyp
+set NODE_TLS_REJECT_UNAUTHORIZED=0
+npm install sharp
+set PUPPETEER_SKIP_DOWNLOAD=
+npm install puppeteer
+
+version 2:
+npm config set strict-ssl false
+set NODE_TLS_REJECT_UNAUTHORIZED=0
+
+
+version linux:
+sudo apt update
+sudo apt install openssh-server
+sudo systemctl status ssh
+sudo ufw allow ssh
+
+curl -k -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
+
+# Replace with the branch of Node.js or io.js you want to install: node_6.x, node_8.x, etc...
+VERSION=node_8.x
+# The below command will set this correctly, but if lsb_release isn't available, you can set it manually:
+# - For Debian distributions: jessie, sid, etc...
+# - For Ubuntu distributions: xenial, bionic, etc...
+# - For Debian or Ubuntu derived distributions your best option is to use the codename corresponding to the upstream release your distribution is based off. This is an advanced scenario and unsupported if your distribution is not listed as supported per earlier in this README.
+DISTRO="$(lsb_release -s -c)"
+echo "deb https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+echo "deb-src https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee -a /etc/apt/sources.list.d/nodesource.list
+
+sudo apt update
+sudo apt install node npm
+sudo apt install libnss #puede no existir
+sudo apt install libnss3-dev libgdk-pixbuf2.0-dev libgtk-3-dev libxss-dev
+sudo apt install libasound2
+NODE_TLS_REJECT_UNAUTHORIZED=0 npm install
+sudo ufw allow 3000
